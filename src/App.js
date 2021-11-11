@@ -1,11 +1,19 @@
 import './App.css';
+import Header from './components/Header';
+import Footer from './components/Footer';
+import Main from './pages/Main';
+
 
 function App() {
+
   return (
     <div className="App">
-      <h1>Hello React</h1>
+      <Header />
+      <Main />
+      <Footer />
     </div>
   );
 }
+
 
 export default App;
