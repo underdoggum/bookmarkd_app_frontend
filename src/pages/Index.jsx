@@ -1,20 +1,15 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-
-
 const Index = props => {
-
   // state to hold form data
   const [newForm, setNewForm] = useState({
     title: "",
     url: "",
   });
-
   // handleChange function for the form
   const handleChange = event => {
     setNewForm({ ...newForm, [event.target.name]: event.target.value });
   };
-
   // handleSubmit function for the form
   const handleSubmit = event => {
     event.preventDefault();
@@ -24,7 +19,6 @@ const Index = props => {
       url: "",
     });
   };
-
   const form = (
     <form onSubmit={handleSubmit}>
         <input
@@ -44,8 +38,6 @@ const Index = props => {
         <input type="submit" value="Create Bookmark" />
       </form>
   )
-
-
   if (props.bookmarks) {
     return (
       <section className="Index">
@@ -72,6 +64,4 @@ const Index = props => {
     )
   }
 }
-
-
 export default Index;
