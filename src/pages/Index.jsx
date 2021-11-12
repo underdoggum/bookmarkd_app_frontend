@@ -43,7 +43,10 @@ const Index = props => {
             <a href={bookmark.url}>
               <h1>{bookmark.title}</h1>
             </a>
-          </div>
+            {/* route the update button to a new form page? */}
+            <a href="#"><button>Update</button></a>
+            <a href="#"><button>Delete</button></a>
+            </div>
         )
       })
     )
