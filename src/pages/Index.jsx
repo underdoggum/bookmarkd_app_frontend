@@ -1,10 +1,8 @@
 import { useState } from "react";
-import { Link } from "react";
+// import { Link } from "react";
 
 
 
-// check with Jameson on the schema variable names
-// check with Jameson on the route names
 // initial logic for forms is similar to our cheese app/people app frontend
 // https://git.generalassemb.ly/SEIR-927/Unit_3_React_Express/blob/main/Day_08/lecture.md
 // need to create buttons that can make make edit/delete requests
@@ -38,18 +36,16 @@ const Index = props => {
   // logic for determining if the API data has loaded or not
   // here might be a good place where we can put the delete/update buttons that point to update/delete routes for each bookmark
   const loaded = () => {
-    console.log(props.bookmarks)
     return (
-      props.bookmarks.map(bookmark => (
-        <div key={bookmark._id} className="bookmark">
-          <Link to={bookmark.url}>
-            <a href={bookmark.url}></a>
-            <h1>{bookmark.title}</h1>
-          </Link>
-          Update button goes here
-          Delete button goes here
-        </div>
-      ))
+      props.bookmarks.map((bookmark, index) => {
+        return (
+          <div key={bookmark._id} className="bookmark">
+            <a href={bookmark.url}>
+              <h1>{bookmark.title}</h1>
+            </a>
+          </div>
+        )
+      })
     )
   };
 
@@ -77,7 +73,8 @@ const Index = props => {
         />
         <input type="submit" value="Create Bookmark" />
       </form>
-      {props.bookmark ? loaded() : loading()}
+      {console.log("checking if bookmarks are loaded: ", props.bookmarks)}
+      {props.bookmarks ? loaded() : loading()}
     </section>
   )
 }

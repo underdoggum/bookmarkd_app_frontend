@@ -7,37 +7,37 @@ const Main = props => {
   
   const [bookmarks, setBookmarks] = useState(null);
 
-  const URL = "https://bookmarkd-app-backend.herokuapp.com/";
+  const URL = "https://bookmarkd-app-backend.herokuapp.com/bookmark";
 
   const getBookmarks = async () => {
     const response = await fetch(URL);
     const data = await response.json();
+    console.log("IN MAIN.JSX", data)
     setBookmarks(data);
   }
 
-  const createBookmark = async bookmarks => {
+  const createBookmark = async bookmark => {
     // make post request to create a bookmarks
     await fetch(URL, {
       method: "post",
       headers: {
         "Content-type": "application/json"
       },
-      body: JSON.stringify(bookmarks),
+      body: JSON.stringify(bookmark),
     });
-    // update the list of bookmarks
     getBookmarks();
   };
 
   useEffect(() => getBookmarks(), []);
 
 
-    return (
-      <main className="Main">
-        <Routes>
-          <Route exact path="/bookmark" element={<Index bookmarks={bookmarks} createBookmark={createBookmark} />} />
-        </Routes>
-      </main>
-    )
+  return (
+    <main className="Main">
+      <Routes>
+        <Route path="/" element={<Index bookmarks={bookmarks} createBookmark={createBookmark} />} />
+      </Routes>
+    </main>
+  )
 
 };
 
