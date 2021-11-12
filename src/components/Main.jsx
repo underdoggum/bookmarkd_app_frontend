@@ -1,22 +1,18 @@
+
 import { useState, useEffect } from "react";
 import { Route, Routes } from "react-router-dom";
 import Index from "../pages/Index";
 import Show from "../pages/Show";
 
-
 const Main = props => {
-  
   const [bookmarks, setBookmarks] = useState(null);
-
   const URL = "https://bookmarkd-app-backend.herokuapp.com/bookmark";
-
   // get request (default for fetch function)
   const getBookmarks = async () => {
     const response = await fetch(URL);
     const data = await response.json();
     setBookmarks(data);
   }
-
   // for create route
   const createBookmark = async bookmark => {
     await fetch(URL, {
@@ -28,7 +24,6 @@ const Main = props => {
     });
     getBookmarks();
   };
-
   // for update route
   const updateBookmark = async (bookmark, id) => {
     await fetch(URL + id, {
@@ -40,7 +35,6 @@ const Main = props => {
     })
     getBookmarks();
   };
-
   // for destroy route
   const deleteBookmark = async id => {
     await fetch(URL + id, {
@@ -48,11 +42,8 @@ const Main = props => {
     });
     getBookmarks();
   };
-
   // for getting bookmarks first when a page loads
   useEffect(() => getBookmarks(), []);
-
-
   return (
     <main className="Main">
       <Routes>
@@ -61,8 +52,5 @@ const Main = props => {
       </Routes>
     </main>
   )
-
 };
-
-
 export default Main;
