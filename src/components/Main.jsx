@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Route, Routes } from "react-router-dom";
 import Index from "../pages/Index";
+import Show from "../pages/Show";
 
 
 const Main = props => {
@@ -48,21 +49,15 @@ const Main = props => {
     getBookmarks();
   };
 
-
-
+  // for getting bookmarks first when a page loads
   useEffect(() => getBookmarks(), []);
 
 
   return (
     <main className="Main">
       <Routes>
-        <Route path="/" element={
-          <Index
-            bookmarks={bookmarks}
-            createBookmark={createBookmark}
-          />
-        }/>
-        {/* make update route or show route here */}
+        <Route path="/" element={<Index bookmarks={bookmarks} createBookmark={createBookmark} />} />
+        <Route path="/bookmarks/:id" element={<Show bookmarks={bookmarks} updateBookmark={updateBookmark} deleteBookmark={deleteBookmark} />} />
       </Routes>
     </main>
   )
