@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-const Index = props => {
+
+export const Index = props => {
   // state to hold form data
   const [newForm, setNewForm] = useState({
     title: "",
