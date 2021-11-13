@@ -1,12 +1,13 @@
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate} from "react-router-dom";
 import { useEffect, useState } from "react";
 
 
 const Show = props => {
-
+  const navigate = useNavigate()
   const params = useParams();
   const id = params.id;
   const bookmarks = props.bookmarks;
+  const bookmarks = bookmark.find((b) => b._id === id);
 
   const [editForm, setEditForm] = useState({});
 
@@ -21,12 +22,54 @@ const Show = props => {
   if (props.bookmarks) {
     const bookmark = bookmarks.find(b => b._id === id);
 
-    // handleChange and handleSubmit here
+    const handleChange = (event) => {
+      const newState = {...editForm}
+      newState[event.target.name] = event.target.value
+      setEditForm(newState)
+  }
 
+  // handleSubmit for form
+  const handleSubmit = (event) => {
+      event.preventDefault()
+      props.updateBookmarks(editForm, bookmark._id)
+      navigate("/")
+  }
+
+  // delete a person
+  const removeBookmark = () => {
+      props.deleteBookmark(bookmark._id)
+      navigate("/")
+  }
+
+  // ADD IN FORM W/ HANDLE SUBMIT + HANDLECHANGE
+
+  const form = (
+    <form onSubmit={handleSubmit}>
+           <input
+            type="text"
+            value={editForm.title}
+            name="title"
+            placeholder="bookmark title"
+            onChange={handleChange}
+          />
+          <input
+            type="text"
+            value={editForm.url}
+            name="URL"
+            placeholder="bookmark url"
+            onChange={handleChange}
+          />
+      <input type="submit" value="Update Person" />
+
+    </form>
+  );
 
     return (
       <div className="bookmark">
         <h1>{bookmark.title}</h1>
+        <h2>{bookmark.url}</h2>
+        {form}
+        <button onClick={removeBookmark}>DELETE BOOKMARK</button>
       </div>
     )
   } else {
