@@ -1,4 +1,8 @@
-
+* {
+    margin: 0;
+    padding: 0;
+    background-color: seashell;
+}
 // ----------------------
 // Variables
 // ----------------------
@@ -12,6 +16,8 @@ $contrastcolor: #FEF5ED;
 }
 
 
+
+
 // -------------
 // Header
 // -------------
@@ -19,6 +25,7 @@ $contrastcolor: #FEF5ED;
 nav {
     @include black-text-grey-bg;
     height: 5vh;
+    padding-top: 1em;
 
 }
 
@@ -32,3 +39,7 @@ nav {
     right: 0;    
     bottom: 0;
 }    
+
+footer {
+    padding: 1%;
+}

@@ -42,14 +42,14 @@ const Index = props => {
     return (
       <section className="Index">
         {form}
-        {console.log("logging", props.bookmarks)}
         {props.bookmarks.map(bookmark => {
           return (
             <div key={bookmark._id} className="bookmark">
+              {/* I've added a button here that points to the show route (which can be like an update route, just kept as Show.jsx to avoid refactoring more) */}
+              <a href={bookmark.url}><h1>{bookmark.title}</h1></a>
               <Link to={`/bookmarks/${bookmark._id}`}>
-                <h1>{bookmark.title}</h1>
+                <button>Modify or Delete</button>
               </Link>
-              <a href={bookmark.url}>link here</a>
             </div>
           )
         })}
