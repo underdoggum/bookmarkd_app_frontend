@@ -44,30 +44,30 @@ const Show = props => {
 
   const form = (
     <form onSubmit={handleSubmit}>
-        <input
+        <input className="input-editform-bookmark-title"
         type="text"
         value={editForm.title}
         name="title"
         placeholder="bookmark title"
         onChange={handleChange}
       />
-      <input
+      <input className="input-editform-bookmark-url"
         type="text"
         value={editForm.url}
         name="url"
         placeholder="bookmark url"
         onChange={handleChange}
       />
-      <input type="submit" value="Update Bookmark" />
+      <input type="submit" value="Update Bookmark" className="update-button" />
     </form>
   );
 
     return (
-      <div className="bookmark">
-        <h1>{bookmark.title}</h1>
-        <h2>{bookmark.url}</h2>
+      <div className="div-bookmark">
+        <h1 className="h1-show-bookmark-title">{bookmark.title}</h1>
+        <h2 className="h2-bookmark-url">{bookmark.url}</h2>
         {form}
-        <button onClick={removeBookmark}>DELETE BOOKMARK</button>
+        <button className="delete-button" onClick={removeBookmark}>DELETE BOOKMARK</button>
       </div>
     )
   } else {
