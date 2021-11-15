@@ -6,7 +6,7 @@ const Show = props => {
   const params = useParams();
   const id = params.id;
   const bookmarks = props.bookmarks;
-  const bookmarks = bookmark.find((b) => b._id === id);
+  // const bookmark = bookmarks.find((b) => b._id === id);
 
   const [editForm, setEditForm] = useState({});
 
@@ -30,7 +30,7 @@ const Show = props => {
   // handleSubmit for form
   const handleSubmit = (event) => {
       event.preventDefault()
-      props.updateBookmarks(editForm, bookmark._id)
+      props.updateBookmark(editForm, bookmark._id)
       navigate("/")
   }
 
@@ -44,22 +44,21 @@ const Show = props => {
 
   const form = (
     <form onSubmit={handleSubmit}>
-           <input
-            type="text"
-            value={editForm.title}
-            name="title"
-            placeholder="bookmark title"
-            onChange={handleChange}
-          />
-          <input
-            type="text"
-            value={editForm.url}
-            name="URL"
-            placeholder="bookmark url"
-            onChange={handleChange}
-          />
-      <input type="submit" value="Update Person" />
-
+        <input
+        type="text"
+        value={editForm.title}
+        name="title"
+        placeholder="bookmark title"
+        onChange={handleChange}
+      />
+      <input
+        type="text"
+        value={editForm.url}
+        name="url"
+        placeholder="bookmark url"
+        onChange={handleChange}
+      />
+      <input type="submit" value="Update Bookmark" />
     </form>
   );
 
