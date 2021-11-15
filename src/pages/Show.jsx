@@ -6,7 +6,6 @@ const Show = props => {
   const params = useParams();
   const id = params.id;
   const bookmarks = props.bookmarks;
-  // const bookmark = bookmarks.find((b) => b._id === id);
 
   const [editForm, setEditForm] = useState({});
 
@@ -39,8 +38,6 @@ const Show = props => {
       props.deleteBookmark(bookmark._id)
       navigate("/")
   }
-
-  // ADD IN FORM W/ HANDLE SUBMIT + HANDLECHANGE
 
   const form = (
     <form onSubmit={handleSubmit}>
