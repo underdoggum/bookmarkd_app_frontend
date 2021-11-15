@@ -11,6 +11,7 @@ export const Index = props => {
   const handleChange = event => {
     setNewForm({ ...newForm, [event.target.name]: event.target.value });
   };
+  
   // handleSubmit function for the form
   const handleSubmit = event => {
     event.preventDefault();
@@ -24,8 +25,8 @@ export const Index = props => {
     <form onSubmit={handleSubmit}>
         <input
           type="text"
-          value={newForm.title}
-          name="title"
+          value={newForm.name}
+          name="name"
           placeholder="Title"
           onChange={handleChange}
         />
