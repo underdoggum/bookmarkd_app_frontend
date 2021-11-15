@@ -47,8 +47,10 @@ const Main = props => {
   return (
     <main className="Main">
       <Routes>
-        <Route path="/" element={<Index bookmarks={bookmarks} createBookmark={createBookmark} />} />
-        <Route path="/bookmarks/:id" element={<Show bookmarks={bookmarks} updateBookmark={updateBookmark} deleteBookmark={deleteBookmark} />} />
+        <Route path="/" element={
+        <Index bookmarks={bookmarks} createBookmark={createBookmark} />} />
+        <Route path="/bookmarks/:id" element={
+        <Show bookmarks={bookmarks} updateBookmark = {updateBookmark} deleteBookmark={deleteBookmark} />} />
       </Routes>
     </main>
   )
