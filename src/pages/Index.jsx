@@ -36,7 +36,7 @@ const Index = props => {
           placeholder="Url"
           onChange={handleChange}
         />
-        <input type="submit" value="Create Bookmark" />
+        <input type="submit" value="Create Bookmark" className="input-create-bookmark" />
       </form>
   )
   if (props.bookmarks) {

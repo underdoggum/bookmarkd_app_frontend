@@ -1,3 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Poppins:wght@100&display=swap');
+* {
+  font-family: 'Open Sans', sans-serif;
+}
+
 .App {
   text-align: center;
 }
@@ -35,4 +40,64 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.a-bookmark-url {
+  text-decoration: none;
+}
+
+.h1-index-bookmark-title {
+  background-color: #323094;
+  display: inline-block;
+  color: #c2c2c2;
+  margin: 17px 20px 5px 0;
+  padding: 8px;
+  border-radius: 5px;
+}
+
+.h1-index-bookmark-title:hover {
+  background-color: #c2c2c2;
+  color: #323094;
+}
+
+.h1-index-bookmark-title:active {
+  background-color: #616161;
+  color: #b0c4fc;
+}
+
+/* button source https://codepen.io/davidicus/pen/emgQKJ */
+
+.button-modify-or-delete {
+  border-radius: 5px;
+  padding: 15px;
+  color: #f3f1f1;
+  background-color: #c9c2c2;
+  background-image: linear-gradient(62deg, #f16969 0%, rgb(160, 55, 55) 100%);
+}
+
+.button-modify-or-delete:hover {
+  border: 0 solid;
+  box-shadow: inset 0 0 20px rgba(255, 255, 255, 0);
+  outline: 1px solid;
+  outline-color: rgba(255, 255, 255, .5);
+  outline-offset: 0px;
+  text-shadow: none;
+  transition: all 1250ms cubic-bezier(0.19, 1, 0.22, 1);
+} 
+
+.button-modify-or-delete:hover {
+  border: 1px solid;
+  box-shadow: inset 0 0 20px rgba(255, 255, 255, .5), 0 0 20px rgba(255, 255, 255, .2);
+  outline-color: rgba(255, 255, 255, 0);
+  outline-offset: 15px;
+  text-shadow: 1px 1px 2px #427388; 
+}
+
+.input-create-bookmark {
+  border-radius: 5px;
+  padding: 10px;
+  margin: 0 0 0 10px;
+  color: #f3f1f1;
+  background-color: #c9c2c2;
+  background-image: linear-gradient(62deg, #f16969 0%, rgb(160, 55, 55) 100%);
 }
