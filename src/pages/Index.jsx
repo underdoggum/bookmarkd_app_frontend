@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import Searchbox from "../components/Searchbox";
 
 export const Index = props => {
   // state to hold form data
@@ -43,11 +44,11 @@ export const Index = props => {
   if (props.bookmarks) {
     return (
       <section className="Index">
+        <Searchbox value={props.searchTerm} handleChangeSearch={e => props.handleChangeSearch(e.target.value)} />
         {form}
         {props.bookmarks.map(bookmark => {
           return (
             <div key={bookmark._id} className="bookmark">
-              {/* I've added a button here that points to the show route (which can be like an update route, just kept as Show.jsx to avoid refactoring more) */}
               <a className="a-bookmark-url" href={bookmark.url}><h1 className="h1-index-bookmark-title">{bookmark.title}</h1></a>
               <Link to={`/bookmarks/${bookmark._id}`}>
                 <button className="button-modify-or-delete">Modify or Delete</button>
