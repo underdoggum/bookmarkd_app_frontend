@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import Searchbox from "../components/Searchbox";
 
-const Index = props => {
+export const Index = props => {
   // state to hold form data
   const [newForm, setNewForm] = useState({
     title: "",
@@ -12,6 +12,7 @@ const Index = props => {
   const handleChange = event => {
     setNewForm({ ...newForm, [event.target.name]: event.target.value });
   };
+  
   // handleSubmit function for the form
   const handleSubmit = event => {
     event.preventDefault();
@@ -25,8 +26,8 @@ const Index = props => {
     <form onSubmit={handleSubmit}>
         <input className="input-newform-bookmark-title"
           type="text"
-          value={newForm.title}
-          name="title"
+          value={newForm.name}
+          name="name"
           placeholder="Title"
           onChange={handleChange}
         />
