@@ -16,10 +16,13 @@ For this project, we are making a bookmarking application that allows users to s
 ## Library/Techniques
 - RESTful Routes
 - CRUD
-- Deployment with Nelify 
+- Deployment with Heroku, Netlify 
 
 ## React Routing Table 
-
+| Action         | Path                        | HTTP Verb | Purpose                                                                        |
+|:--------------:|:---------------------------:|:---------:|:------------------------------------------------------------------------------:|
+| Index          | /                           | GET       | List all Days                                                                  |
+| Show           | /bookmarks/:id              | GET       | Show info about one Day                                                        |
 
 
 ## User Stories
@@ -32,3 +35,4 @@ For this project, we are making a bookmarking application that allows users to s
 
 ## Challenges
 - Our main challenges were around collaborating and understanding the new workflows or creating a new branch and avoiding merge conflicts. 
+- Also, the searchbox wasn't comparing text input to values in the full array of bookmark titles correctly. The solution was learning that React doesn't necessarily update state in the order that the input
