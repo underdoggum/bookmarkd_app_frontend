@@ -16,7 +16,7 @@ For this project, we are making a bookmarking application that allows users to s
 ## Library/Techniques
 - RESTful Routes
 - CRUD
-- Deployment with Heroku
+- Deployment with Nelify 
 
 ## React Routing Table 
 
