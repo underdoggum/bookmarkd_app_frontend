@@ -1,7 +1,6 @@
 import { useParams, useNavigate} from "react-router-dom";
 import { useEffect, useState } from "react";
 
-
 const Show = props => {
   const navigate = useNavigate()
   const params = useParams();
