@@ -7,7 +7,8 @@ export const Show = props => {
   const params = useParams();
   const id = params.id;
   const bookmarks = props.bookmarks;
-  const bookmark = bookmarks.find((b) => b._id === id);
+  // const bookmark = bookmarks.find((b) => b._id === id);
+
   const [editForm, setEditForm] = useState({});
 
   useEffect(() => {
@@ -21,11 +22,12 @@ export const Show = props => {
   if (props.bookmarks) {
     const bookmark = bookmarks.find((b) => b._id === id);
 
-      const handleChange = (event) => {
-        const newState = {...editForm}
-        newState[event.target.name] = event.target.value
-        setEditForm(newState)
-    }
+  // handleSubmit for form
+  const handleSubmit = (event) => {
+      event.preventDefault()
+      props.updateBookmark(editForm, bookmark._id)
+      navigate("/")
+  }
 
     // handleSubmit for form
     const handleSubmit = (event) => {
@@ -40,27 +42,27 @@ export const Show = props => {
         navigate("/")
     }
 
-    const form = (
-      <form onSubmit={handleSubmit}>
-          <input
-            type="text"
-            value={editForm.title}
-            name="title"
-            placeholder="Title"
-            onChange={handleChange}
-          />
-          <input
-            type="text"
-            value={editForm.url}
-            name="url"
-            placeholder="Url"
-            onChange={handleChange}
-          />
-        <input type="submit" value="Update Bookmark"/>
-      </form>
-    );
+  const form = (
+    <form onSubmit={handleSubmit}>
+        <input
+        type="text"
+        value={editForm.title}
+        name="title"
+        placeholder="bookmark title"
+        onChange={handleChange}
+      />
+      <input
+        type="text"
+        value={editForm.url}
+        name="url"
+        placeholder="bookmark url"
+        onChange={handleChange}
+      />
+      <input type="submit" value="Update Bookmark" />
+    </form>
+  );
 
-  return (
+    return (
       <div className="bookmark">
         {form}
         <h1>{bookmark.title}</h1>
