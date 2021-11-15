@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+
 const Index = props => {
   // state to hold form data
   const [newForm, setNewForm] = useState({
@@ -21,14 +22,14 @@ const Index = props => {
   };
   const form = (
     <form onSubmit={handleSubmit}>
-        <input
+        <input className="input-newform-bookmark-title"
           type="text"
           value={newForm.title}
           name="title"
           placeholder="Title"
           onChange={handleChange}
         />
-        <input
+        <input className="input-newform-bookmark-url"
           type="text"
           value={newForm.url}
           name="url"
@@ -46,9 +47,9 @@ const Index = props => {
           return (
             <div key={bookmark._id} className="bookmark">
               {/* I've added a button here that points to the show route (which can be like an update route, just kept as Show.jsx to avoid refactoring more) */}
-              <a href={bookmark.url}><h1>{bookmark.title}</h1></a>
+              <a className="a-bookmark-url" href={bookmark.url}><h1 className="h1-index-bookmark-title">{bookmark.title}</h1></a>
               <Link to={`/bookmarks/${bookmark._id}`}>
-                <button>Modify or Delete</button>
+                <button className="button-modify-or-delete">Modify or Delete</button>
               </Link>
             </div>
           )
