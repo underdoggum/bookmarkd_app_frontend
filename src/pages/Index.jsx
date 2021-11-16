@@ -22,18 +22,29 @@ export const Index = props => {
       url: "",
     });
   };
+
+  // below regex and function courtesy of Matthew Crumley
+  // https://stackoverflow.com/questions/3543187/prepending-http-to-a-url-that-doesnt-already-contain-http
+  const prependHttp = (str) => {
+    if (!/^https?:\/\//i.test(str)) {
+      return "http://" + str;
+    } else {
+      return str;
+    }
+  }
+
   const form = (
     <form onSubmit={handleSubmit}>
         <input className="input-newform-bookmark-title"
           type="text"
-          value={newForm.name}
-          name="name"
+          value={newForm.title}
+          name="title"
           placeholder="Title"
           onChange={handleChange}
         />
         <input className="input-newform-bookmark-url"
           type="text"
-          value={newForm.url}
+          value={prependHttp(newForm.url)}
           name="url"
           placeholder="Url"
           onChange={handleChange}
