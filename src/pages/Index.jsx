@@ -27,7 +27,7 @@ export const Index = props => {
   // https://stackoverflow.com/questions/3543187/prepending-http-to-a-url-that-doesnt-already-contain-http
   const prependHttp = (str) => {
     if (!/^https?:\/\//i.test(str)) {
-      return "http://" + str;
+      return "https://" + str;
     } else {
       return str;
     }
