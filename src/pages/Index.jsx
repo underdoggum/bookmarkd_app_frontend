@@ -23,11 +23,11 @@ export const Index = props => {
     });
   };
 
-  // below regex and function courtesy of Matthew Crumley
+  // below regex and function logic courtesy of Matthew Crumley
   // https://stackoverflow.com/questions/3543187/prepending-http-to-a-url-that-doesnt-already-contain-http
   const prependHttp = (str) => {
     if (!/^https?:\/\//i.test(str)) {
-      return "https://" + str;
+      return "http://" + str;
     } else {
       return str;
     }
