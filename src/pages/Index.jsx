@@ -2,12 +2,14 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import Searchbox from "../components/Searchbox";
 
+
 export const Index = props => {
   // state to hold form data
   const [newForm, setNewForm] = useState({
     title: "",
     url: "",
   });
+
   // handleChange function for the form
   const handleChange = event => {
     setNewForm({ ...newForm, [event.target.name]: event.target.value });
@@ -52,6 +54,7 @@ export const Index = props => {
         <input type="submit" value="Create Bookmark" className="input-create-bookmark" />
       </form>
   )
+
   if (props.bookmarks) {
     return (
       <section className="Index">
@@ -78,4 +81,6 @@ export const Index = props => {
     )
   }
 }
+
+
 export default Index;

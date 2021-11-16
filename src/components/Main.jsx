@@ -52,6 +52,7 @@ const Main = props => {
     });
     getBookmarks();
   };
+
   // for update route
   const updateBookmark = async (bookmark, id) => {
     await fetch(URL + id, {
@@ -63,6 +64,7 @@ const Main = props => {
     })
     getBookmarks();
   };
+
   // for destroy route
   const deleteBookmark = async id => {
     await fetch(URL + id, {
@@ -70,6 +72,7 @@ const Main = props => {
     });
     getBookmarks();
   };
+
   // for getting bookmarks first when a page loads
   // added conditional props to determine to show the whole list or just the searchbox-filtered list
   useEffect(() => getBookmarks(), []);
@@ -95,4 +98,6 @@ const Main = props => {
     </main>
   )
 };
+
+
 export default Main;
