@@ -1,32 +1,50 @@
 * {
     margin: 0;
     padding: 0;
-    background-color: seashell;
+    // background-color: seashell;
 }
 // ----------------------
 // Variables
 // ----------------------
 $maincolor: black;
-$contrastcolor: #FEF5ED;
+$contrastcolor: white;
 
 
-@mixin black-text-grey-bg {
+@mixin black-text-white-bg {
     color: $maincolor;
     background-color: $contrastcolor;
 }
 
 
-
-
 // -------------
 // Header
 // -------------
+.header-title {
+    @include black-text-white-bg;
+    font-family: 'Road Rage', cursive;
+    color: black;
+    font-size: 7em;
+}
+
+.bookmark-icon {
+    font-size: 1em;
+    color: rgb(222,53,45);
+    animation: rotation 6s linear;
+}
+
+@keyframes rotation {
+  50% {
+    transform: rotate(360deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
 
 nav {
-    @include black-text-grey-bg;
     height: 5vh;
     padding-top: 1em;
-
+    margin-bottom: 6em;
 }
 
 // -------------
@@ -38,6 +56,9 @@ nav {
     left: 0;
     right: 0;    
     bottom: 0;
+    background: rgba(black, 0.5);
+    color: white;
+    font-family: 'Oxygen', sans-serif;
 }    
 
 footer {
