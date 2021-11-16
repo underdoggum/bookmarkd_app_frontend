@@ -16,7 +16,6 @@ const Show = props => {
     }
   }, [props.bookmarks]);
 
-
   if (props.bookmarks) {
     const bookmark = bookmarks.find(b => b._id === id);
 
