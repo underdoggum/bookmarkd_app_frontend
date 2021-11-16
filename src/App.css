@@ -46,6 +46,10 @@
 
 /* Index */
 
+.Index {
+  height: 100vh;
+}
+
 .a-bookmark-url {
   text-decoration: none;
 }
