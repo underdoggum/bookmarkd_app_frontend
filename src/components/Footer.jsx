@@ -6,9 +6,8 @@ const Footer = props => {
   return (
     <div className="Footer">
         <footer>
-          <p>Created by: Jameson 
-            <a href="https://github.com/code-weather"><FontAwesomeIcon icon={faGithubAlt} pulse/></a> 
-              , Lucy <FontAwesomeIcon icon={faGithubAlt} pulse /> and Nathan <FontAwesomeIcon icon={faGithubAlt} pulse /> | &copy; 2021</p>
+          <p>Created by: Jameson <a href="https://github.com/code-weather" target="_blank"><FontAwesomeIcon icon={faGithubAlt} pulse/></a> 
+              ,   Nathan <a href="https://github.com/underdoggum" target="_blank"><FontAwesomeIcon icon={faGithubAlt} pulse/></a> and Lucy <a href="https://github.com/lucyliu94" target="_blank"><FontAwesomeIcon icon={faGithubAlt} pulse /></a> | &copy; 2021</p>
         </footer>   
     </div>
   )
