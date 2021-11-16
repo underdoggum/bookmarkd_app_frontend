@@ -8,7 +8,7 @@ const Footer = props => {
         <footer>
           <p>Created by: Jameson 
             <a href="https://github.com/code-weather"><FontAwesomeIcon icon={faGithubAlt} pulse/></a> 
-             , Lucy <FontAwesomeIcon icon={faGithubAlt} pulse /> and Nathan <FontAwesomeIcon icon={faGithubAlt} pulse /> | &copy; 2021</p>
+              , Lucy <FontAwesomeIcon icon={faGithubAlt} pulse /> and Nathan <FontAwesomeIcon icon={faGithubAlt} pulse /> | &copy; 2021</p>
         </footer>   
     </div>
   )
